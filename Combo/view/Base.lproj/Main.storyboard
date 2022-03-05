@@ -6,7 +6,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,62 +50,28 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sn-UQ-7ns">
-                                                    <rect key="frame" x="0.0" y="24.666666666666671" width="428" height="178.33333333333331"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OCG-j2-sb1">
-                                                        <size key="itemSize" width="112" height="128"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" restorationIdentifier="GradesCVCell" reuseIdentifier="GradesCVCell" id="DWs-ZJ-MFN" customClass="GradesCVCell" customModule="Combo" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="24" width="130" height="130"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iYA-zf-0ks">
-                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csf-Jn-dEZ">
-                                                                        <rect key="frame" x="23" y="96" width="66" height="24"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <color key="backgroundColor" red="0.046267911791801453" green="0.97016614675521851" blue="0.56812715530395508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="face" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-1J-gja">
-                                                                        <rect key="frame" x="1" y="0.0" width="129" height="97"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </collectionViewCellContentView>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <size key="customSize" width="130" height="130"/>
-                                                            <connections>
-                                                                <outlet property="gradeImage" destination="ezg-1J-gja" id="DGz-OA-3ws"/>
-                                                                <outlet property="testLabel" destination="csf-Jn-dEZ" id="NdV-fp-XEv"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="BYZ-38-t0r" id="FNd-kE-E0k"/>
-                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="ona-mc-sdy"/>
-                                                    </connections>
-                                                </collectionView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7Q-lR-Jxg">
+                                                    <rect key="frame" x="153" y="50" width="122" height="122"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <buttonConfiguration key="configuration" style="gray" image="hand.thumbsup" catalog="system"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHA-MD-JQC">
+                                                    <rect key="frame" x="13" y="50" width="122" height="122"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <buttonConfiguration key="configuration" style="gray" image="hand.thumbsup" catalog="system"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvh-HO-dkb">
+                                                    <rect key="frame" x="294" y="50" width="122" height="122"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <buttonConfiguration key="configuration" style="gray" image="hand.thumbsup" catalog="system"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pa8-on-MaN" firstAttribute="top" secondItem="1hj-tD-7Ve" secondAttribute="top" id="FjF-2x-EWz"/>
-                                                <constraint firstItem="6sn-UQ-7ns" firstAttribute="leading" secondItem="1hj-tD-7Ve" secondAttribute="leading" id="N7C-vn-MEI"/>
-                                                <constraint firstItem="6sn-UQ-7ns" firstAttribute="top" secondItem="pa8-on-MaN" secondAttribute="bottom" id="TOE-4o-UsE"/>
-                                                <constraint firstAttribute="trailing" secondItem="6sn-UQ-7ns" secondAttribute="trailing" id="rhs-DT-cxw"/>
-                                                <constraint firstAttribute="bottom" secondItem="6sn-UQ-7ns" secondAttribute="bottom" id="wWI-TU-Hq2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="collectionView" destination="6sn-UQ-7ns" id="Xxq-AJ-FaJ"/>
                                             <outlet property="question" destination="pa8-on-MaN" id="z9F-my-Zpd"/>
                                         </connections>
                                     </tableViewCell>
@@ -143,11 +108,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-489.2523364485981" y="-583.15334773218149"/>
+            <point key="canvasLocation" x="-317" y="-572"/>
         </scene>
     </scenes>
     <resources>
-        <image name="face" width="128" height="128"/>
+        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

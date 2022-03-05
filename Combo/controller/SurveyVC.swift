@@ -16,6 +16,7 @@ class SurveyVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(GradingCell.nib(), forCellReuseIdentifier: GradingCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundView = UIImageView(image: UIImage(named: getServiceName(choice: serviceSelected)))
@@ -59,11 +60,13 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SurveyTableViewCell", for: indexPath)
-                as? SurveyTVCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: GradingCell.identifier, for: indexPath)
+            as? GradingCell else {
                     fatalError("Unable to create survey table view cell")
         }
         cell.question?.text = DataService.instance.getQuestions(division: DataService.instance.getDivision(seq: serviceSelected))[indexPath.row].questionAsked
+        cell.configure(with: indexPath.row)
+        cell.delegate = self
         return cell
     }
     
@@ -73,4 +76,14 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     }
     
 }
-
+extension SurveyVC: GradingCellDelegate {
+    func upButtonTapped(with seq: Int) {
+        <#code#>
+    }
+    func smileButtonTapped(with seq: Int) {
+        <#code#>
+    }
+    func downButtonTapped(with seq: Int) {
+        <#code#>
+    }
+}

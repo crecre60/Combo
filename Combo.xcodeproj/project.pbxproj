@@ -12,10 +12,11 @@
 		787D859727D1240B0088D345 /* SurveyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D859627D1240B0088D345 /* SurveyVC.swift */; };
 		787D859A27D1240B0088D345 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787D859827D1240B0088D345 /* Main.storyboard */; };
 		787D859C27D1240D0088D345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 787D859B27D1240D0088D345 /* Assets.xcassets */; };
-		787D861127D19AB40088D345 /* SurveyTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861027D19AB40088D345 /* SurveyTVCell.swift */; };
 		787D861327D1A40A0088D345 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861227D1A40A0088D345 /* DataService.swift */; };
 		787D861527D1A48F0088D345 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861427D1A48F0088D345 /* Question.swift */; };
-		787D861727D1CEC50088D345 /* GradesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861627D1CEC50088D345 /* GradesCVCell.swift */; };
+		787D869B27D351280088D345 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787D869A27D351280088D345 /* Empty.xib */; };
+		787D869E27D352180088D345 /* GradingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D869C27D352180088D345 /* GradingCell.swift */; };
+		787D869F27D352180088D345 /* GradingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787D869D27D352180088D345 /* GradingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		787D859927D1240B0088D345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		787D859B27D1240D0088D345 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		787D85A027D1240D0088D345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		787D861027D19AB40088D345 /* SurveyTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTVCell.swift; sourceTree = "<group>"; };
 		787D861227D1A40A0088D345 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		787D861427D1A48F0088D345 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		787D861627D1CEC50088D345 /* GradesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesCVCell.swift; sourceTree = "<group>"; };
+		787D869A27D351280088D345 /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Empty.xib; path = Combo/controller/Empty.xib; sourceTree = SOURCE_ROOT; };
+		787D869C27D352180088D345 /* GradingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradingCell.swift; sourceTree = "<group>"; };
+		787D869D27D352180088D345 /* GradingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +94,9 @@
 		787D860E27D199F60088D345 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				787D861027D19AB40088D345 /* SurveyTVCell.swift */,
-				787D861627D1CEC50088D345 /* GradesCVCell.swift */,
+				787D869A27D351280088D345 /* Empty.xib */,
+				787D869C27D352180088D345 /* GradingCell.swift */,
+				787D869D27D352180088D345 /* GradingCell.xib */,
 				787D859827D1240B0088D345 /* Main.storyboard */,
 			);
 			path = view;
@@ -166,6 +169,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				787D869F27D352180088D345 /* GradingCell.xib in Resources */,
+				787D869B27D351280088D345 /* Empty.xib in Resources */,
 				787D859C27D1240D0088D345 /* Assets.xcassets in Resources */,
 				787D859A27D1240B0088D345 /* Main.storyboard in Resources */,
 			);
@@ -178,12 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				787D861727D1CEC50088D345 /* GradesCVCell.swift in Sources */,
 				787D859727D1240B0088D345 /* SurveyVC.swift in Sources */,
-				787D861127D19AB40088D345 /* SurveyTVCell.swift in Sources */,
 				787D859327D1240B0088D345 /* AppDelegate.swift in Sources */,
 				787D861527D1A48F0088D345 /* Question.swift in Sources */,
 				787D859527D1240B0088D345 /* SceneDelegate.swift in Sources */,
+				787D869E27D352180088D345 /* GradingCell.swift in Sources */,
 				787D861327D1A40A0088D345 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
