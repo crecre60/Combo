@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		787D859327D1240B0088D345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D859227D1240B0088D345 /* AppDelegate.swift */; };
 		787D859527D1240B0088D345 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D859427D1240B0088D345 /* SceneDelegate.swift */; };
-		787D859727D1240B0088D345 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D859627D1240B0088D345 /* ViewController.swift */; };
+		787D859727D1240B0088D345 /* SurveyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D859627D1240B0088D345 /* SurveyVC.swift */; };
 		787D859A27D1240B0088D345 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787D859827D1240B0088D345 /* Main.storyboard */; };
 		787D859C27D1240D0088D345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 787D859B27D1240D0088D345 /* Assets.xcassets */; };
-		787D859F27D1240D0088D345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787D859D27D1240D0088D345 /* LaunchScreen.storyboard */; };
+		787D861127D19AB40088D345 /* SurveyTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861027D19AB40088D345 /* SurveyTVCell.swift */; };
+		787D861327D1A40A0088D345 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861227D1A40A0088D345 /* DataService.swift */; };
+		787D861527D1A48F0088D345 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861427D1A48F0088D345 /* Question.swift */; };
+		787D861727D1CEC50088D345 /* GradesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D861627D1CEC50088D345 /* GradesCVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		787D858F27D1240B0088D345 /* Combo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		787D859227D1240B0088D345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		787D859427D1240B0088D345 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		787D859627D1240B0088D345 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		787D859627D1240B0088D345 /* SurveyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyVC.swift; sourceTree = "<group>"; };
 		787D859927D1240B0088D345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		787D859B27D1240D0088D345 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		787D859E27D1240D0088D345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		787D85A027D1240D0088D345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		787D861027D19AB40088D345 /* SurveyTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyTVCell.swift; sourceTree = "<group>"; };
+		787D861227D1A40A0088D345 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		787D861427D1A48F0088D345 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		787D861627D1CEC50088D345 /* GradesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesCVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		787D859127D1240B0088D345 /* Combo */ = {
 			isa = PBXGroup;
 			children = (
-				787D859227D1240B0088D345 /* AppDelegate.swift */,
-				787D859427D1240B0088D345 /* SceneDelegate.swift */,
-				787D859627D1240B0088D345 /* ViewController.swift */,
-				787D859827D1240B0088D345 /* Main.storyboard */,
-				787D859B27D1240D0088D345 /* Assets.xcassets */,
-				787D859D27D1240D0088D345 /* LaunchScreen.storyboard */,
+				787D860D27D199CA0088D345 /* model */,
+				787D860E27D199F60088D345 /* view */,
+				787D860C27D199A70088D345 /* controller */,
 				787D85A027D1240D0088D345 /* Info.plist */,
 			);
 			path = Combo;
+			sourceTree = "<group>";
+		};
+		787D860C27D199A70088D345 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				787D859627D1240B0088D345 /* SurveyVC.swift */,
+				787D859227D1240B0088D345 /* AppDelegate.swift */,
+				787D859427D1240B0088D345 /* SceneDelegate.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		787D860D27D199CA0088D345 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				787D861427D1A48F0088D345 /* Question.swift */,
+				787D860F27D19A330088D345 /* DataStore */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		787D860E27D199F60088D345 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				787D861027D19AB40088D345 /* SurveyTVCell.swift */,
+				787D861627D1CEC50088D345 /* GradesCVCell.swift */,
+				787D859827D1240B0088D345 /* Main.storyboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		787D860F27D19A330088D345 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				787D861227D1A40A0088D345 /* DataService.swift */,
+				787D859B27D1240D0088D345 /* Assets.xcassets */,
+			);
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +166,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				787D859F27D1240D0088D345 /* LaunchScreen.storyboard in Resources */,
 				787D859C27D1240D0088D345 /* Assets.xcassets in Resources */,
 				787D859A27D1240B0088D345 /* Main.storyboard in Resources */,
 			);
@@ -138,9 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				787D859727D1240B0088D345 /* ViewController.swift in Sources */,
+				787D861727D1CEC50088D345 /* GradesCVCell.swift in Sources */,
+				787D859727D1240B0088D345 /* SurveyVC.swift in Sources */,
+				787D861127D19AB40088D345 /* SurveyTVCell.swift in Sources */,
 				787D859327D1240B0088D345 /* AppDelegate.swift in Sources */,
+				787D861527D1A48F0088D345 /* Question.swift in Sources */,
 				787D859527D1240B0088D345 /* SceneDelegate.swift in Sources */,
+				787D861327D1A40A0088D345 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,14 +197,6 @@
 				787D859927D1240B0088D345 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		787D859D27D1240D0088D345 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				787D859E27D1240D0088D345 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,8 +323,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Combo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -303,6 +340,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.Combo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -314,8 +352,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Combo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -330,6 +369,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.Combo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
