@@ -13,15 +13,8 @@
 
 import UIKit
 
-protocol GradingCellDelegate: AnyObject {
-    func upButtonTapped(with seq: Int)
-    func smileButtonTapped(with seq: Int)
-    func downButtonTapped(with seq: Int)
-}
-
 class GradingCell: UITableViewCell {
     
-    weak var delegate: GradingCellDelegate?
     static let identifier = "GradingCell"
     
     static func nib() -> UINib {
@@ -29,57 +22,28 @@ class GradingCell: UITableViewCell {
     }
     
     @IBOutlet weak var question: UILabel!
-    @IBOutlet var gradeButtons: [UIButton]!
-    @IBOutlet var downButton: UIButton!
-    @IBOutlet var smileButton: UIButton!
-    @IBOutlet var upButton: UIButton!
-
-    @IBAction func upButtonTapped(_ sender: Any) {
-    }
-    @IBAction func smileButtonTapped(_ sender: Any) {
-    }
-     
-    @IBAction func downButtonTapped(_ sender: Any) {
-    }
-    func configure(with seq: Int) {
-        upButton.setImage(UIImage( named: ""), for: .normal)
-        smileButton.setImage(UIImage( named: ""), for: .normal)
-        downButton.setImage(UIImage( named: ""), for: .normal)
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+     @IBOutlet weak var checkForUp: UIImageView!
+    @IBOutlet weak var checkForSmile: UIImageView!
+    @IBOutlet weak var checkForDown: UIImageView!
+    
+//   checkForUp.isHidden = true
+//    checkForUp.isHidden = true
+//    checkForUp.isHidden = true
  
+    func checkButton(posX:CGFloat, posY: CGFloat) {
+        if checkForUp.isHidden == true {
+            checkForUp.isHidden = false}
+            checkForUp.frame.origin.x = posX
+            checkForUp.frame.origin.y = posY
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        let a = sender.frame.origin.x
+        let b = sender.frame.origin.y
+        checkButton(posX: a, posY: b)
     }
 }
 
-//    extension SurveyTVCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//
-//        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//            return 3
-//        }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        let imageName = DataService.instance.getGradeImage(img: indexPath.row)
-//
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  "GradesCVCell", for: indexPath) as? GradesCVCell else {
-//            fatalError("Unable to create survey table view cell")
-//    }
-//
-//        cell.gradeButton?.setImage( UIImage(systemName: imageName), for: .normal)
-//
-//            return cell
-//    }
-//
-//        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//            return CGSize(width: 120, height: 120)
-//        }
-//
-//    }
+
 
 

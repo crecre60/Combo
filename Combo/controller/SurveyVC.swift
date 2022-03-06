@@ -6,20 +6,36 @@
 //
 
 import UIKit
+import Speech
 
+//protocol GoNext {
+//    func callNext()
+//}
 class SurveyVC: UIViewController {
 
     @IBOutlet weak var serviceTitle: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableOutlet: UITableView!
     
+//    var delegate: GoNext?
     var serviceSelected = 0
+    
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(GradingCell.nib(), forCellReuseIdentifier: GradingCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundView = UIImageView(image: UIImage(named: getServiceName(choice: serviceSelected)))
+        tableOutlet.register(UINib(nibName: "GradingCell", bundle: nil), forCellReuseIdentifier:  "GradingCell")
+//        tableView.register(GradingCell.nib(), forCellReuseIdentifier: GradingCell.identifier)
+        tableOutlet.delegate = self
+        tableOutlet.dataSource = self
+        tableOutlet.estimatedRowHeight = 145
+        tableOutlet.backgroundView = UIImageView(image: UIImage(named: getServiceName(choice: serviceSelected)))
         
         self.serviceTitle.text = getCapitalizedServiceName(Choice: serviceSelected)
     }
@@ -30,17 +46,17 @@ class SurveyVC: UIViewController {
     
     func getCapitalizedServiceName(Choice : Int) -> String {
         return getServiceName(choice: Choice).capitalized  + " Service"
-        //(DataService.instance.getDivision(seq: choice).capitalized) + "Service"
     }
     
-    @IBAction func nextAction(_ sender: Any) {
-        
+    func callNext() {
+//        self.delegate?.callNext()
         if serviceSelected < 2 {
             serviceSelected += 1
             self.serviceTitle.text = getCapitalizedServiceName(Choice: serviceSelected)
-            tableView.backgroundView = UIImageView(image: UIImage(named: getServiceName(choice: serviceSelected)))
-            tableView.reloadData()
+            tableOutlet.backgroundView = UIImageView(image: UIImage(named: getServiceName(choice: serviceSelected)))
+            tableOutlet.reloadData()
         } else {
+            
                  //***** To be interfaced with next screen
                 //Placeholder: "StarVC"
                //
@@ -50,6 +66,11 @@ class SurveyVC: UIViewController {
                 //            nextVC.modalPresentationStyle = .fullScreen
                 //            self.present(nextVC, animated: true, completion: nil)
             }
+
+    }
+    
+    @IBAction func nextAction(_ sender: Any) {
+        callNext()
         }
     }
 
@@ -60,13 +81,16 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: GradingCell.identifier, for: indexPath)
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "GradingCell")
             as? GradingCell else {
                     fatalError("Unable to create survey table view cell")
         }
+//    var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+//            if cell == nil  {
+//                cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+//        }
         cell.question?.text = DataService.instance.getQuestions(division: DataService.instance.getDivision(seq: serviceSelected))[indexPath.row].questionAsked
-        cell.configure(with: indexPath.row)
-        cell.delegate = self
+//        cell.delegate = self
         return cell
     }
     
@@ -74,16 +98,26 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         tableView.sectionHeaderTopPadding = 0
         return 160
     }
-    
+
+//    func upButtonTapped()  {
+////        let tappedCell = tableView(tableView: tableOutlet,  indexPath: indexPath.row)
+//
+//            //        let sierie = Sierie()
+//            //
+//            //        if sierie.startSpeechRec(cmd: "next") == () {
+//            //            nextAction((Any).self)
+//            //        }
+//        print(DataService.instance.getGradeImage(img: 0))
+//            //            (sender as AnyObject).setTitle("stop", for: .normal)
+////        cell.configureUp(DataService.instance.getGradeImage(img: 4))
+//    }
+//    func smileButtonTapped() {
+//        print(DataService.instance.getGradeImage(img: 2))
+//    }
+//    func downButtonTapped() {
+//        print(DataService.instance.getGradeImage(img: 4))
+//    }
 }
-extension SurveyVC: GradingCellDelegate {
-    func upButtonTapped(with seq: Int) {
-        <#code#>
-    }
-    func smileButtonTapped(with seq: Int) {
-        <#code#>
-    }
-    func downButtonTapped(with seq: Int) {
-        <#code#>
-    }
-}
+
+//extension SurveyVC: GradingCellDelegate {
+//}
